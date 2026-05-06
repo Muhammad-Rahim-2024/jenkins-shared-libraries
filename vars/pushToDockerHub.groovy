@@ -7,9 +7,8 @@ def call(String dockerHubCred, String imageName, String imageTag ){
   sh "docker login -u ${USER} -p ${PASS}"
   sh "docker image tag ${imageName}:${imageTag} ${USER}/${imageName}:${imageTag}"
   sh "docker push ${USER}/${imageName}:${imageTag}"
+  }
 }
-
-
 
 
 
@@ -21,6 +20,3 @@ def call(String dockerHubCred, String imageName, String imageTag ){
 //                 sh "docker login -u ${env.DockerHubUser} -p ${env.DockerHubPass}"
 //                 sh "docker image tag notes-app:latest ${env.DockerHubUser}/notes-app:latest"
 //                 sh "docker push ${env.DockerHubUser}/notes-app:latest"
-            
-
-  
